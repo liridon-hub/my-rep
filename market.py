@@ -13,10 +13,8 @@ def market():
     print("===MAIN-DEPARTMENTS===")
 
 def bakery_depart(ss, rr, gg):
-    global cash
+    global cash, shporta, payment
     print("=======BAKERY-DEPARTMENT=======")
-    global shporta
-    global payment
     while True:
         products = {"white bread" : 0.50, "wholemeal" : 1}
         which = input("Anything to buy?(no - exit) ")                
@@ -35,10 +33,8 @@ def bakery_depart(ss, rr, gg):
                 print("No money left.")
                 break
 def meat_department(ss, sse, gg):
-    global cash
+    global cash, shporta, payment
     print("=======MEAT-DEPARTMENT=======")
-    global shporta
-    global payment
     products = {"white meat" : 1.5, "red meat" : 2, "fish" : 3}
     while True:
         print(f"{products}$")
@@ -58,9 +54,7 @@ def meat_department(ss, sse, gg):
                 print("No money left.")
                 break
 def jackets(eu, sh, gg):
-    global cash
-    global shporta
-    global payment
+    global cash, shporta, payment
     print("=======JACKETS-DEPARTMENT=======")
 
     products = {
@@ -91,11 +85,9 @@ Your products so far: {shporta} """)
             break
 
 def jeans(ff, vv, gg):
-    global cash
-    global shporta
+    global cash, shporta, payment
     print("=======JEANS-DEPARTMENT=======")
 
-    global payment
     products = {
         "slim fit": 5,
         "regular fit": 4,
@@ -123,11 +115,9 @@ Your products so far: {shporta} """)
             print("No money left.")
             break
 def tshirts(ss, sh, gg):
-    global cash
-    global shporta
+    global cash, shporta, payment
     print("=======T-SHIRTS-DEPARTMENT=======")
 
-    global payment
     products = {
         "slim fit": 5,
         "regular fit": 4,
@@ -218,9 +208,7 @@ All the bests {name.capitalize()}!""")
     time.sleep(1)
     print(f"I still have {cash} left.")
 def blej(nn, gg):
-    global cash
-    global shporta
-    global name
+    global cash, shporta, name
     while True:   
         v = input("In which department you want to enter?(bakery/meat/clothing/tech or no to exit)\n ")  
         if v == "bakery":
