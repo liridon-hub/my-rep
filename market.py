@@ -3,7 +3,9 @@ name = input("Enter your name: ")
 cash = float(input("Enter your amount of money you want to spend: "))
 print(cash)
 payment = 0
-
+print()
+print(f"Welcome {name}, you have {cash}$ to spend.")
+print()
 
 banka_account = 10
 shporta = []
@@ -12,7 +14,7 @@ def market():
     print("=======SUPER-MARKET=======")
     print("===MAIN-DEPARTMENTS===")
 
-def bakery_depart(ss, rr, gg):
+def bakery_depart():
     global cash, shporta, payment
     print("=======BAKERY-DEPARTMENT=======")
     while True:
@@ -36,7 +38,7 @@ def bakery_depart(ss, rr, gg):
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def meat_department(ss, sse, gg):
+def meat_department():
     global cash, shporta, payment
     print("=======MEAT-DEPARTMENT=======")
     products = {"white meat" : 1.5, "red meat" : 2, "fish" : 3}
@@ -61,7 +63,7 @@ def meat_department(ss, sse, gg):
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def jackets(eu, sh, gg):
+def jackets():
     global cash, shporta, payment
     print("=======JACKETS-DEPARTMENT=======")
 
@@ -96,7 +98,7 @@ Your products so far: {shporta} """)
             print(f"Your moneys left: {cash}$")
             print()
 
-def jeans(ff, vv, gg):
+def jeans():
     global cash, shporta, payment
     print("=======JEANS-DEPARTMENT=======")
 
@@ -130,7 +132,7 @@ Your products so far: {shporta} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def tshirts(ss, sh, gg):
+def tshirts():
     global cash, shporta, payment
     print("=======T-SHIRTS-DEPARTMENT=======")
 
@@ -163,7 +165,7 @@ Your products so far: {shporta} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def clothing_department(nn, ss, gg):
+def clothing_department():
     deparments = ["Jackets", "Jeans", "T-shirts"]
     print("=======CLOTHING-DEPARTMENT=======")
 
@@ -186,7 +188,7 @@ def clothing_department(nn, ss, gg):
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def tech(ss, sh, gg):
+def tech():
     global cash
     global shporta
     print("=======TECH-DEPARTMENT=======")
@@ -224,15 +226,15 @@ Your products so far: {shporta} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
-def arka(gg):
+def checkout():
     global cash
-    print(cash)
+    print(f"Cash:{cash}$")
     global banka_account
-    print(banka_account)
+    print(f"In Bank: {banka_account}$")
     if cash <= 0:
         cash += banka_account
-    print("Taking from bank account")
-    print(cash)
+        print("Taking from bank account")
+        print(cash)
     print(f"""Exited
 The amount you have pay: {payment}$"
 Your products: {shporta}
@@ -240,27 +242,28 @@ Thank you for believing in our Market.
 All the bests {name.capitalize()}!""")
     time.sleep(1)
     print(f"I still have {cash}$ left.")
-def blej(nn, gg):
+def blej():
     global cash, shporta, name
     while True:   
-        v = input("In which department you want to enter?(bakery/meat/clothing/tech or no to exit)\n ")  
+        print("Deparments: bakery, meat, clothing, tech, checkout")
+        v = input("In which department you want to go? ")  
         if v == "bakery":
             print("Let's go to bakery department?")
-            bakery_depart(cash, shporta, payment)
+            bakery_depart()
             
         elif v == "meat":
             print("Let's go to meat department?")
-            meat_department(cash, shporta, payment)
+            meat_department()
             
         elif v == "clothing":
            print("Let's go to clothing department?")
-           clothing_department(cash, shporta, payment)
+           clothing_department()
         elif v == "tech":
            print("Let's go to tech department?")
-           tech(cash, shporta, payment)
-        elif v == "no":
+           tech()
+        elif v == "checkout":
             print("Exited")
-            arka(payment)
+            checkout()
             break
         elif v == "money":
             print()
@@ -268,7 +271,7 @@ def blej(nn, gg):
             print()
         else:
             print("Not such department.")
-            break
+            
         
 
 
@@ -279,4 +282,4 @@ def blej(nn, gg):
 
 
 market()
-blej(cash, payment)
+blej()
