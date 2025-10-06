@@ -17,6 +17,7 @@ def bakery_depart(ss, rr, gg):
     print("=======BAKERY-DEPARTMENT=======")
     while True:
         products = {"white bread" : 0.50, "wholemeal" : 1}
+        print(products)
         which = input("Anything to buy?(no - exit) ")                
         if which == "no":
             print("Exited")
@@ -27,11 +28,14 @@ def bakery_depart(ss, rr, gg):
             shporta.append(which)
             cash -= products[which]
             payment += products[which]
-
             print(f"Your {cash}$ left.")
             if cash <= 0:
                 print("No money left.")
                 break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def meat_department(ss, sse, gg):
     global cash, shporta, payment
     print("=======MEAT-DEPARTMENT=======")
@@ -53,6 +57,10 @@ def meat_department(ss, sse, gg):
             if cash <= 0:
                 print("No money left.")
                 break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def jackets(eu, sh, gg):
     global cash, shporta, payment
     print("=======JACKETS-DEPARTMENT=======")
@@ -83,6 +91,10 @@ Your products so far: {shporta} """)
         elif cash <= 0:
             print("No money left.")
             break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 
 def jeans(ff, vv, gg):
     global cash, shporta, payment
@@ -114,6 +126,10 @@ Your products so far: {shporta} """)
         elif cash <= 0:
             print("No money left.")
             break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def tshirts(ss, sh, gg):
     global cash, shporta, payment
     print("=======T-SHIRTS-DEPARTMENT=======")
@@ -143,6 +159,10 @@ Your products so far: {shporta} """)
         elif cash <= 0:
             print("No money left.")
             break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def clothing_department(nn, ss, gg):
     deparments = ["Jackets", "Jeans", "T-shirts"]
     print("=======CLOTHING-DEPARTMENT=======")
@@ -162,6 +182,10 @@ def clothing_department(nn, ss, gg):
         elif cash <= 0:
             print("No money left.")
             break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def tech(ss, sh, gg):
     global cash
     global shporta
@@ -196,17 +220,26 @@ Your products so far: {shporta} """)
         elif which =="just watching":
             print("You need to get out sir.")
             break
+        elif which == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
 def arka(gg):
     global cash
-    if cash == 0:
+    print(cash)
+    global banka_account
+    print(banka_account)
+    if cash <= 0:
         cash += banka_account
+    print("Taking from bank account")
+    print(cash)
     print(f"""Exited
 The amount you have pay: {payment}$"
 Your products: {shporta}
 Thank you for believing in our Market.
 All the bests {name.capitalize()}!""")
     time.sleep(1)
-    print(f"I still have {cash} left.")
+    print(f"I still have {cash}$ left.")
 def blej(nn, gg):
     global cash, shporta, name
     while True:   
@@ -229,9 +262,14 @@ def blej(nn, gg):
             print("Exited")
             arka(payment)
             break
+        elif v == "money":
+            print()
+            print(f"Your moneys left: {cash}$")
+            print()
         else:
             print("Not such department.")
             break
+        
 
 
 
