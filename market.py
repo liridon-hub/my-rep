@@ -207,7 +207,7 @@ Your products so far: {shporta} """)
             print("You need to get out sir.")
             break
 def arka(gg):
-    
+#look the changes when you push again in repository   
     global cash
     if cash == 0:
         cash += banka_account
