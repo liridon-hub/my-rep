@@ -34,6 +34,11 @@ def bakery_depart():
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def meat_department():
     global cash, cart, payment
     print("=======MEAT-DEPARTMENT=======")
@@ -56,6 +61,11 @@ def meat_department():
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def jackets():
     global cash, cart, payment
     print("=======JACKETS-DEPARTMENT=======")
@@ -88,6 +98,11 @@ Your products so far: {cart} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 
 def jeans():
     global cash, cart, payment
@@ -120,6 +135,11 @@ Your products so far: {cart} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def tshirts():
     global cash, cart, payment
     print("=======T-SHIRTS-DEPARTMENT=======")
@@ -150,6 +170,11 @@ Your products so far: {cart} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def clothing_department():
     deparments = ["Jackets", "Jeans", "T-shirts"]
     print("=======CLOTHING-DEPARTMENT=======")
@@ -170,6 +195,11 @@ def clothing_department():
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def tech():
     global cash
     global cart
@@ -206,6 +236,11 @@ Your products so far: {cart} """)
             print()
             print(f"Your moneys left: {cash}$")
             print()
+        elif which == f"del":
+            cash += products[cart[-1]]
+            payment -= products[cart[-1]]
+            del cart[-1]
+            print(cart)
 def checkout():
     global cash
     print(f"Cash:{cash}$")
