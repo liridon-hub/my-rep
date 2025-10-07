@@ -8,13 +8,13 @@ print(f"Welcome {name}, you have {cash}$ to spend.")
 print()
 
 banka_account = 10
-shporta = []
+cart = []
 def market():
     print("=======SUPER-MARKET=======")
     print("===MAIN-DEPARTMENTS===")
 
 def bakery_depart():
-    global cash, shporta, payment
+    global cash, cart, payment
     print("=======BAKERY-DEPARTMENT=======")
     while True:
         products = {"white bread" : 0.50, "wholemeal" : 1}
@@ -23,10 +23,10 @@ def bakery_depart():
         if which == "no":
             print("Exited")
             print(f"Your {cash}$ left.")
-            print(f"Your products so far: {shporta}")
+            print(f"Your products so far: {cart}")
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
             print(f"Your {cash}$ left.")
@@ -35,7 +35,7 @@ def bakery_depart():
             print(f"Your moneys left: {cash}$")
             print()
 def meat_department():
-    global cash, shporta, payment
+    global cash, cart, payment
     print("=======MEAT-DEPARTMENT=======")
     products = {"white meat" : 1.5, "red meat" : 2, "fish" : 3}
     while True:
@@ -44,10 +44,10 @@ def meat_department():
         if which == "no":
             print("Exited")
             print(f"Your {cash}$ left.")
-            print(f"Your products so far: {shporta}")
+            print(f"Your products so far: {cart}")
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
 
@@ -57,7 +57,7 @@ def meat_department():
             print(f"Your moneys left: {cash}$")
             print()
 def jackets():
-    global cash, shporta, payment
+    global cash, cart, payment
     print("=======JACKETS-DEPARTMENT=======")
 
     products = {
@@ -73,16 +73,16 @@ def jackets():
             print("Exited from Jackets Department.")
             print(f"""
 Your moneys left: {cash}
-Your products so far: {shporta} """)
+Your products so far: {cart} """)
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
 
             print(f"""
 Your moneys left: {cash}
-Your products so far: {shporta} """)
+Your products so far: {cart} """)
         
         elif which == "money":
             print()
@@ -90,7 +90,7 @@ Your products so far: {shporta} """)
             print()
 
 def jeans():
-    global cash, shporta, payment
+    global cash, cart, payment
     print("=======JEANS-DEPARTMENT=======")
 
     products = {
@@ -106,22 +106,22 @@ def jeans():
             print("Exited from Jeans Department.")
             print(f"""
             Your moneys left: {cash}
-            Your products so far: {shporta} """)
+            Your products so far: {cart} """)
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
 
             print(f"""
 Your moneys left: {cash}
-Your products so far: {shporta} """)
+Your products so far: {cart} """)
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
             print()
 def tshirts():
-    global cash, shporta, payment
+    global cash, cart, payment
     print("=======T-SHIRTS-DEPARTMENT=======")
 
     products = {
@@ -137,15 +137,15 @@ def tshirts():
             print("Exited from T-shirts Department.")
             print(f"""
 Your moneys left: {cash}
-Your products so far: {shporta} """)
+Your products so far: {cart} """)
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
             print(f"""
             Your moneys left: {cash}
-            Your products so far: {shporta} """)
+            Your products so far: {cart} """)
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -161,18 +161,18 @@ def clothing_department():
             print("Exited from clothing department.")
             break
         elif which == "jackets":
-            jackets(cash, shporta, payment)
+            jackets()
         elif which == "jeans":
-            jeans(cash, shporta, payment)
+            jeans()
         elif which == "t-shirts":
-            tshirts(cash, shporta, payment)
+            tshirts()
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
             print()
 def tech():
     global cash
-    global shporta
+    global cart
     print("=======TECH-DEPARTMENT=======")
 
     global payment
@@ -189,15 +189,15 @@ def tech():
             print("Exited from Tech Department.")
             print(f"""
 Your moneys left: {cash}
-Your products so far: {shporta} """)
+Your products so far: {cart} """)
             break
         elif which in products:
-            shporta.append(which)
+            cart.append(which)
             cash -= products[which]
             payment += products[which]
             print(f"""
             Your moneys left: {cash}
-            Your products so far: {shporta} """)
+            Your products so far: {cart} """)
         
         elif which =="just watching":
             print("You need to get out sir.")
@@ -217,13 +217,13 @@ def checkout():
         print(cash)
     print(f"""Exited
 The amount you have pay: {payment}$"
-Your products: {shporta}
+Your products: {cart}
 Thank you for believing in our Market.
 All the bests {name.capitalize()}!""")
     time.sleep(1)
     print(f"I still have {cash}$ left.")
 def blej():
-    global cash, shporta, name
+    global cash, cart, name
     while True:   
         print("Deparments: bakery, meat, clothing, tech, or checkout")
         v = input("In which department you want to go? ")  
