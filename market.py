@@ -9,7 +9,6 @@ print()
 
 banka_account = 10
 shporta = []
-nothing = 0
 def market():
     print("=======SUPER-MARKET=======")
     print("===MAIN-DEPARTMENTS===")
@@ -31,9 +30,6 @@ def bakery_depart():
             cash -= products[which]
             payment += products[which]
             print(f"Your {cash}$ left.")
-            if cash <= 0:
-                print("No money left.")
-                break
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -56,9 +52,6 @@ def meat_department():
             payment += products[which]
 
             print(f"Your {cash}$ left.")
-            if cash <= 0:
-                print("No money left.")
-                break
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -90,9 +83,7 @@ Your products so far: {shporta} """)
             print(f"""
 Your moneys left: {cash}
 Your products so far: {shporta} """)
-        elif cash <= 0:
-            print("No money left.")
-            break
+        
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -125,9 +116,6 @@ def jeans():
             print(f"""
 Your moneys left: {cash}
 Your products so far: {shporta} """)
-        elif cash <= 0:
-            print("No money left.")
-            break
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -158,9 +146,6 @@ Your products so far: {shporta} """)
             print(f"""
             Your moneys left: {cash}
             Your products so far: {shporta} """)
-        elif cash <= 0:
-            print("No money left.")
-            break
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -181,9 +166,6 @@ def clothing_department():
             jeans(cash, shporta, payment)
         elif which == "t-shirts":
             tshirts(cash, shporta, payment)
-        elif cash <= 0:
-            print("No money left.")
-            break
         elif which == "money":
             print()
             print(f"Your moneys left: {cash}$")
@@ -216,9 +198,7 @@ Your products so far: {shporta} """)
             print(f"""
             Your moneys left: {cash}
             Your products so far: {shporta} """)
-        elif cash <= 0:
-            print("No money left.")
-            break
+        
         elif which =="just watching":
             print("You need to get out sir.")
             break
@@ -245,7 +225,7 @@ All the bests {name.capitalize()}!""")
 def blej():
     global cash, shporta, name
     while True:   
-        print("Deparments: bakery, meat, clothing, tech, checkout")
+        print("Deparments: bakery, meat, clothing, tech, or checkout")
         v = input("In which department you want to go? ")  
         if v == "bakery":
             print("Let's go to bakery department?")
